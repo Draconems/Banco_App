@@ -1,0 +1,18 @@
+﻿<h1>Resumen de cuenta<small>  11/Enero/2018  </small></h1> <!--Account Summary,January 3rd 2017-->
+
+<div class="panel panel-default panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">Cuentas en efectivo</h3>
+    </div>
+    <div class="panel-body">
+        <account-summary *ngFor="let account of cashAccounts" [account]="account"></account-summary>
+    </div>
+</div>
+<div class="panel panel-default panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">Cuentas de credito</h3>
+    </div>
+    <div class="panel-body">
+        <account-summary *ngFor="let account of creditAccounts" [account]="account"></account-summary>
+    </div>
+</div>

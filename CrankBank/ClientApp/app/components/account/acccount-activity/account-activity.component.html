@@ -1,0 +1,28 @@
+﻿
+<!--Esta hoja de html define los encabezados y nombres de la pagina de actividad, pagos y comprar
+    depositos y retiros, en los cuales se describe la fecha en que se realizo, la cantidad y su descripción.-->
+
+<!--Tambien sirve para cargas los datos de la carpeta de transaction-->
+
+<h4>Actividad</h4>
+<div class="btn-group" role="group" aria-label="...">
+    <button type="button" class="btn btn-default active">Pagos y compras</button>
+    <button type="button" class="btn btn-default">Depositos</button>
+    <button type="button" class="btn btn-default">Retiros</button>
+</div>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Fecha</th>
+            <th>Descripci&oacute;n</th>
+            <th class="text-right">Cantidad</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let transaction of accountTransactions">
+            <td>{{ transaction.transactionDate | date}}</td>
+            <td>{{ transaction.description }}</td>
+            <td class="text-right">{{ transaction.amount | currency:"USD":true:"1.2-2"}}</td>
+        </tr>
+    </tbody>
+</table>
